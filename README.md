@@ -11,11 +11,8 @@
       margin: 0;
       padding: 0;
       background-color: #f4f4f9;
-      color: #333;
-    }
-
-    .container {
-      max-width: 800px;
+      color: #333;    }
+    .container {      max-width: 800px;
       margin: 20px auto;
       padding: 20px;
       background: #ffffff;
@@ -26,19 +23,16 @@
     h1, h2 {
       text-align: center;
     }
-
     form {
       display: flex;
       flex-direction: column;
       gap: 10px;
       margin-bottom: 20px;
     }
-
     input, button {
       padding: 10px;
       font-size: 16px;
     }
-
     button {
       background-color: #007BFF;
       color: white;
@@ -46,16 +40,13 @@
       cursor: pointer;
       border-radius: 4px;
     }
-
     button:hover {
       background-color: #0056b3;
     }
-
     #goalsList ul {
       list-style: none;
       padding: 0;
     }
-
     #goalsList li {
       background: #e9ecef;
       margin: 5px 0;
@@ -76,26 +67,20 @@
       <input type="date" id="goalDeadline" placeholder="Data limite" required>
       <button type="submit">Adicionar Objetivo</button>
     </form>
-
     <div id="goalsList">
       <h2>Lista de Objetivos</h2>
       <ul id="list"></ul>
     </div>
   </div>
-
-  <script>
-    document.getElementById('goalForm').addEventListener('submit', function(e) {
+  <script>    document.getElementById('goalForm').addEventListener('submit', function(e) {
       e.preventDefault();
-
       // Captura os valores do formulário
       const name = document.getElementById('goalName').value;
       const target = parseFloat(document.getElementById('goalTarget').value);
       const progress = parseFloat(document.getElementById('goalProgress').value);
       const deadline = document.getElementById('goalDeadline').value;
-
       // Calcula o progresso percentual
       const percentage = ((progress / target) * 100).toFixed(2);
-
       // Cria um novo item de lista
       const list = document.getElementById('list');
       const listItem = document.createElement('li');
@@ -103,11 +88,8 @@
         <span><strong>${name}</strong> - Meta: ${target}, Progresso: ${progress} (${percentage}%), Prazo: ${deadline}</span>
         <button onclick="this.parentElement.remove()">Remover</button>
       `;
-
       list.appendChild(listItem);
-
-      // Limpa os campos do formulário
-    document.getElementById('goalForm').reset();
+      // Limpa os campos do formulário    document.getElementById('goalForm').reset();
     });
   </script>
 </body>
